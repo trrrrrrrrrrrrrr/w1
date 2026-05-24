@@ -9,19 +9,19 @@
 <body>
 <div class="container">
     <header>
-        <h1>📡 Отчёт по лабораторной работе №1</h1>
+        <h1> Отчёт по лабораторной работе №1</h1>
         <p class="subtitle">Исследование сетевых утилит, SSH, Git, SFTP</p>
-        <p class="author">Студент: u82311 | Группа: ...</p>
+       
     </header>
 
     <!-- Пункт 1: Подключение по SSH -->
     <section>
-        <h2>🔌 Пункт 1. Подключение к серверу с помощью PuTTY</h2>
+        <h2> Пункт 1. Подключение к серверу с помощью PuTTY</h2>
         <div class="desc">
             <p>На скриншоте <strong>0.png</strong> изображено окно настройки программы <strong>PuTTY</strong> для подключения к учебному серверу по протоколу <strong>SSH (Secure Shell)</strong>.</p>
             <ul>
                 <li><strong>Host Name:</strong> <code>kubsu-dev.ru</code> – доменное имя сервера.</li>
-                <li><strong>Port:</strong> <code>58528</code> – нестандартный порт, выданный преподавателем (стандартный порт SSH – 22).</li>
+                <li><strong>Port:</strong> <code>58528</code> порт, выданный преподавателем.</li>
                 <li><strong>Connection type:</strong> <code>SSH</code> – шифрованное соединение, защищающее передаваемые данные (логин, пароль, команды).</li>
             </ul>
             <p>После нажатия <kbd>Open</kbd> PuTTY установит TCP-соединение с сервером и запустит сеанс SSH, запросив логин (<code>u82311</code>) и пароль.</p>
@@ -39,7 +39,7 @@
 
     <!-- Пункт 2: ping -->
     <section>
-        <h2>📡 Пункт 2. Определение IP-адреса веб-сервера kubsu.ru</h2>
+        <h2> Пункт 2. Определение IP-адреса веб-сервера kubsu.ru</h2>
         <div class="desc">
             <p><strong>Команда:</strong> <code>ping -c 4 kubsu.ru</code></p>
             <p><strong>Что делает:</strong> Утилита <code>ping</code> отправляет ICMP-пакеты (Echo Request) на указанный узел и измеряет время ответа (RTT). Опция <code>-c 4</code> ограничивает количество запросов четырьмя. Это позволяет проверить связь между локальным узлом (сервером, с которого выполняется команда) и удалённым хостом (kubsu.ru).</p>
@@ -53,11 +53,11 @@
 
     <!-- Пункт 3: nslookup A и MX записи -->
     <section>
-        <h2>🌐 Пункт 3. Определение DNS-записей (nslookup)</h2>
+        <h2> Пункт 3. Определение DNS-записей (nslookup)</h2>
         
         <h3>3.1. A-запись домена kubsu.ru</h3>
         <p><strong>Команда:</strong> <code>nslookup -type=A kubsu.ru</code></p>
-        <p>Запрашивает у DNS-сервера адресную запись (A), которая связывает доменное имя с IPv4-адресом. В ответе получен тот же адрес <strong>212.192.128.52</strong> (неавторитативный ответ, но корректный).</p>
+        <p>Запрашивает у DNS-сервера адресную запись (A), которая связывает доменное имя с IPv4-адресом. В ответе получен тот же адрес <strong>212.192.128.52</strong>.</p>
         <figure><img src="3.1.png" alt="A-запись kubsu.ru"><figcaption>Скриншот 3.1 – A запись kubsu.ru</figcaption></figure>
 
         <h3>3.2. MX-запись домена kubsu.ru</h3>
@@ -83,7 +83,7 @@
 
     <!-- Пункт 4: whois -->
     <section>
-        <h2>📅 Пункт 4. Определение даты регистрации доменов (whois)</h2>
+        <h2> Пункт 4. Определение даты регистрации доменов (whois)</h2>
         
         <h3>4.1. Домен kubsu.ru</h3>
         <p><strong>Команда:</strong> <code>whois kubsu.ru</code></p>
@@ -98,7 +98,7 @@
 
     <!-- Пункт 5: Работа с Git и размещение страницы -->
     <section>
-        <h2>📁 Пункт 5. Создание веб-страницы, Git и клонирование на сервер</h2>
+        <h2> Пункт 5. Создание веб-страницы, Git и клонирование на сервер</h2>
 
         <h3>5.1. Подготовка локального репозитория</h3>
         <p>На локальном компьютере создана папка <code>laba1</code>, в которую помещены все скриншоты и файлы <code>index.html</code>, <code>style.css</code> (скриншот <strong>5.1.png</strong>).</p>
@@ -116,28 +116,29 @@ git push -u origin main</code></pre>
         <figure><img src="5.2.png" alt="Git push"><figcaption>Скриншот 5.2 – Отправка файлов в удалённый репозиторий</figcaption></figure>
 
         <h3>5.3. Генерация SSH-ключа на учебном сервере</h3>
-        <p>Для безопасного клонирования через SSH на сервере сгенерирована ключевая пара (<code>ssh-keygen -t ed25519</code>). Скриншот <strong>5.3.png</strong> показывает процесс генерации, <strong>5.4.png</strong> – вывод публичного ключа.</p>
-        <figure><img src="5.3.png" alt="Генерация SSH ключа"><figcaption>Скриншот 5.3 – Генерация SSH-ключа</figcaption></figure>
-        <figure><img src="5.4.png" alt="Публичный ключ"><figcaption>Скриншот 5.4 – Публичный ключ</figcaption></figure>
+        <p>Для безопасного клонирования через SSH на сервере сгенерирована ключевая пара (<code>ssh-keygen -t ed25519</code>). Скриншот <strong>5.3.1.png</strong> показывает процесс генерации, <strong>5.3.2.png</strong> – вывод публичного ключа.</p>
+        <figure><img src="5.3.png" alt="Генерация SSH ключа"><figcaption>Скриншот 5.3.1 – Генерация SSH-ключа</figcaption></figure>
+        <figure><img src="5.4.png" alt="Публичный ключ"><figcaption>Скриншот 5.3.2 – Публичный ключ</figcaption></figure>
 
         <h3>5.4. Добавление SSH-ключа на GitHub</h3>
-        <p>Публичный ключ скопирован и добавлен в настройки учётной записи GitHub (раздел SSH and GPG keys). Скриншот <strong>5.5.png</strong> подтверждает успешное добавление.</p>
-        <figure><img src="5.5.png" alt="Добавление ключа на GitHub"><figcaption>Скриншот 5.5 – SSH-ключ на GitHub</figcaption></figure>
+        <p>Публичный ключ скопирован и добавлен в настройки учётной записи GitHub (раздел SSH and GPG keys). Скриншот <strong>5.4.png</strong> подтверждает успешное добавление.</p>
+        <figure><img src="5.5.png" alt="Добавление ключа на GitHub"><figcaption>Скриншот 5.4 – SSH-ключ на GitHub</figcaption></figure>
 
-        <h3>5.5. Клонирование репозитория на учебный сервер</h3>
+        <h3>5.5. Копирование SSH ссылки для клона репозитория</h3>
+        <figure><img src="5.6.png" alt="ssh"><figcaption>Скриншот 5.5 – ssh ссылка</figcaption></figure>
+
+        <h3>5.6. Клонирование репозитория на учебный сервер</h3>
         <p>На сервере в каталоге <code>~/www</code> выполнена команда:</p>
         <pre><code>git clone git@github.com:rrrrrrrrrrrr/rw1.git</code></pre>
-        <p>Скриншот <strong>5.7.png</strong> показывает процесс клонирования в папку <code>wl</code> (позже переименована в <code>w1</code>). После клонирования все файлы оказались на сервере.</p>
+        <p>Скриншот <strong>5.6.png</strong> показывает процесс клонирования в папку <code>wl</code> (позже переименована в <code>w1</code>). После клонирования все файлы оказались на сервере.</p>
         <figure><img src="5.7.png" alt="git clone"><figcaption>Скриншот 5.6 – Клонирование репозитория</figcaption></figure>
 
-        <h3>5.6. Проверка доступности страницы</h3>
-        <p>В браузере открыт адрес <code>http://u82311.kubsu-dev.ru/w1/</code>. Страница с отчётом загрузилась, все скриншоты отображаются корректно – размещение успешно.</p>
-        <!-- Здесь можно добавить скриншот открытой страницы, но в задании не требовали отдельного, поэтому опустим -->
+        
     </section>
 
     <!-- Пункт 6: SFTP и копирование файлов -->
     <section>
-        <h2>📁 Пункт 6. Копирование файлов через SFTP (FileZilla)</h2>
+        <h2> Пункт 6. Копирование файлов через SFTP (FileZilla)</h2>
         <p>Для получения файлов с сервера на локальную машину использован клиент <strong>FileZilla</strong> с протоколом SFTP (SSH File Transfer Protocol).</p>
         <ul>
             <li><strong>6.1.png</strong> – Настройка соединения: хост <code>kubsu-dev.ru</code>, порт <code>58528</code>, логин <code>u82311</code>, пароль скрыт.</li>
@@ -146,27 +147,20 @@ git push -u origin main</code></pre>
             <li><strong>6.4.png</strong> – Завершение передачи: все файлы скопированы на локальный компьютер.</li>
             <li><strong>6.5.png</strong> – Дополнительный скриншот, подтверждающий успешное скачивание файлов.</li>
         </ul>
-        <div class="screenshot-gallery">
-            <figure><img src="6.1.png" alt="FileZilla настройки"><figcaption>6.1 – Настройка соединения</figcaption></figure>
+         <figure><img src="6.1.png" alt="FileZilla настройки"><figcaption>6.1 – Настройка соединения</figcaption></figure>
+           
             <figure><img src="6.2.png" alt="FileZilla подключение"><figcaption>6.2 – Удалённый каталог</figcaption></figure>
             <figure><img src="6.3.png" alt="Локальный каталог"><figcaption>6.3 – Выбор локальной папки</figcaption></figure>
             <figure><img src="6.4.png" alt="Завершение передачи"><figcaption>6.4 – Передача завершена</figcaption></figure>
             <figure><img src="6.5.png" alt="Подтверждение скачивания"><figcaption>6.5 – Файлы на локальном ПК</figcaption></figure>
-        </div>
+       
         <p>После скачивания новые скриншоты (FileZilla, git pull) были добавлены в репозиторий и отправлены на GitHub. Скриншот <strong>7.1.png</strong> показывает коммит с добавлением 11 новых файлов, а <strong>7.2.png</strong> – выполнение <code>git pull</code> на сервере для синхронизации изменений.</p>
         <figure><img src="7.1.png" alt="git add commit push"><figcaption>7.1 – Добавление скриншотов в Git</figcaption></figure>
         <figure><img src="7.2.png" alt="git pull на сервере"><figcaption>7.2 – Обновление репозитория на сервере</figcaption></figure>
     </section>
 
-    <!-- Заключение и ссылки -->
-    <section>
-        <h2>🔗 Заключение</h2>
-        <p>Все шесть пунктов задания выполнены успешно. Файлы отчёта размещены в публичном репозитории GitHub и на учебном сервере по адресу <code>http://u82311.kubsu-dev.ru/w1/</code>.</p>
-        <ul>
-            <li>Ссылка на веб-страницу: <a href="http://u82311.kubsu-dev.ru/w1/" target="_blank">http://u82311.kubsu-dev.ru/w1/</a></li>
-            <li>Ссылка на репозиторий Git: <a href="https://github.com/trrrrrrrrrrrrrrrrrr/wl" target="_blank">https://github.com/trrrrrrrrrrrrrrrrrr/wl</a></li>
-        </ul>
-    </section>
+   
+   
 </div>
 </body>
 </html>
